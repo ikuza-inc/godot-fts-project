@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://cn346s6ucmfh5"]
+
+[ext_resource type="Script" uid="uid://l6inveh1iruf" path="res://dev/player/main.gd" id="1_jnocl"]
+[ext_resource type="Script" uid="uid://psrrq6mjvb26" path="res://dev/components/pl_movement.gd" id="2_4it44"]
+[ext_resource type="Script" uid="uid://1dtp0jym40ax" path="res://dev/components/pl_camera.gd" id="3_wafd0"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4it44"]
+size = Vector3(1, 2, 1)
+
+[node name="player" type="CharacterBody3D"]
+script = ExtResource("1_jnocl")
+
+[node name="collision" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_4it44")
+
+[node name="camera" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+fov = 90.0
+
+[node name="components" type="Node" parent="."]
+
+[node name="movement" type="Node" parent="components" node_paths=PackedStringArray("root")]
+script = ExtResource("2_4it44")
+root = NodePath("../..")
+metadata/_custom_type_script = "uid://psrrq6mjvb26"
+
+[node name="camera" type="Node" parent="components" node_paths=PackedStringArray("root", "body")]
+script = ExtResource("3_wafd0")
+root = NodePath("../../camera")
+body = NodePath("../..")
+metadata/_custom_type_script = "uid://1dtp0jym40ax"
