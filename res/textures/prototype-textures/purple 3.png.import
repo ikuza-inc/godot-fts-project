@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://boqhpvr1rm0i4"
-path="res://.godot/imported/create_componentable.png-5ab0aff3e77c63bcfd3c205d5a67a300.ctex"
+uid="uid://778hxgp5ysew"
+path="res://.godot/imported/purple 3.png-b96f2e8efa1d86d253fd9b3ad7ce9515.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/create_componentable.png"
-dest_files=["res://.godot/imported/create_componentable.png-5ab0aff3e77c63bcfd3c205d5a67a300.ctex"]
+source_file="res://res/textures/prototype-textures/purple 3.png"
+dest_files=["res://.godot/imported/purple 3.png-b96f2e8efa1d86d253fd9b3ad7ce9515.ctex"]
 
 [params]
 

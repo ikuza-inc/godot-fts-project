@@ -14,9 +14,11 @@ config/name="FTS (FuckThisShit)"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
-[autoload]
+[display]
 
-Component="*res://addons/componentable/Component.gd"
+window/size/mode=3
+window/stretch/mode="canvas_items"
+window/stretch/aspect="ignore"
 
 [dotnet]
 
@@ -24,7 +26,7 @@ project/assembly_name="FTS (FuckThisShit)"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/componentable/plugin.cfg", "res://addons/proton_control_animation/plugin.cfg")
+enabled=PackedStringArray("res://addons/proton_control_animation/plugin.cfg")
 
 [input]
 

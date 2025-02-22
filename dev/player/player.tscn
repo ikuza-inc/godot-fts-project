@@ -1,20 +1,23 @@
-[gd_scene load_steps=5 format=3 uid="uid://cn346s6ucmfh5"]
+[gd_scene load_steps=6 format=3 uid="uid://cn346s6ucmfh5"]
 
 [ext_resource type="Script" uid="uid://l6inveh1iruf" path="res://dev/player/main.gd" id="1_jnocl"]
 [ext_resource type="Script" uid="uid://psrrq6mjvb26" path="res://dev/components/pl_movement.gd" id="2_4it44"]
 [ext_resource type="Script" uid="uid://1dtp0jym40ax" path="res://dev/components/pl_camera.gd" id="3_wafd0"]
+[ext_resource type="Texture2D" uid="uid://bbs557hpilxbj" path="res://res/canvas/DotSingle.svg" id="4_k71mg"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_4it44"]
-size = Vector3(1, 2, 1)
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_wafd0"]
 
 [node name="player" type="CharacterBody3D"]
 script = ExtResource("1_jnocl")
 
 [node name="collision" type="CollisionShape3D" parent="."]
-shape = SubResource("BoxShape3D_4it44")
+shape = SubResource("CapsuleShape3D_wafd0")
+debug_color = Color(0, 0.6, 0.701961, 1)
+debug_fill = false
 
 [node name="camera" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+doppler_tracking = 2
 fov = 90.0
 
 [node name="components" type="Node" parent="."]
@@ -29,3 +32,21 @@ script = ExtResource("3_wafd0")
 root = NodePath("../../camera")
 body = NodePath("../..")
 metadata/_custom_type_script = "uid://1dtp0jym40ax"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+texture_filter = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -6.0
+offset_top = -6.0
+offset_right = 114.0
+offset_bottom = 114.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("4_k71mg")

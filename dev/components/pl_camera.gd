@@ -5,8 +5,12 @@ class_name PlayerCamera extends Components
 
 func _input(event):
 	if Input.is_key_pressed(KEY_F5):
-		if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED: Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-		else: Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+		if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED: 
+			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+			return
+		else: 
+			Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+			return
 	if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
 		body.rotate_y(-event.relative.x * mouse_sensitivity)
 		root.rotate_x(-event.relative.y * mouse_sensitivity)
